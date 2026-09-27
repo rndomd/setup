@@ -1,0 +1,22 @@
+* {
+	font-family: "Comic Code";
+	font-size: 12px;
+}
+#workspaces button {
+    padding: 0 6px;
+    color: #888888;
+    background: transparent;
+}
+
+#workspaces button.active {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+window#waybar {
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    background: #000000;
+    color: #ffffff;
+}

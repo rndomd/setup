@@ -1,5 +1,15 @@
 local mainMod = "SUPER"
 
+hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("foot --app-id=power-menu --title=Power --window-size-chars=32x12 ~/.local/bin/power-menu"))
+hl.window_rule({
+    name = "power-menu",
+    match = { class = "power-menu" },
+
+    float = true,
+    center = true,
+    size = "300 100",
+})
+
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
     { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),

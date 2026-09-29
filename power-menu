@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+trap 'exit 0' INT TERM
+
+export GUM_CHOOSE_CURSOR_FOREGROUND=6
+export GUM_CHOOSE_SELECTED_FOREGROUND=6
+export GUM_CHOOSE_HEADER_FOREGROUND=7
+export GUM_CONFIRM_PROMPT_FOREGROUND=7
+export GUM_CONFIRM_SELECTED_BACKGROUND=6
+export GUM_CONFIRM_SELECTED_FOREGROUND=0
+
+clear
+
+if ! choice=$(gum choose \
+    --header="" \
+    --cursor="> " \
+    --height=5 \
+    --padding="0 2" \
+    "Shutdown" \
+    "Reboot"); then
+    exit 0
+fi
+
+confirm() {
+    gum confirm "$1" --default=false
+}
+
+case "$choice" in
+    "Shutdown")
+        hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'
+        ;;
+    "Reboot")
+        hyprshutdown -t 'Restarting...' --post-cmd 'reboot'
+        ;;
+esac

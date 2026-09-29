@@ -5,18 +5,23 @@ trap 'exit 0' INT TERM
 
 export GUM_CHOOSE_CURSOR_FOREGROUND=6
 export GUM_CHOOSE_SELECTED_FOREGROUND=6
-export GUM_CHOOSE_HEADER_FOREGROUND=7
-export GUM_CONFIRM_PROMPT_FOREGROUND=7
-export GUM_CONFIRM_SELECTED_BACKGROUND=6
-export GUM_CONFIRM_SELECTED_FOREGROUND=0
 
 clear
 
+title="Power Menu:"
+indent=10
+
+header=""
+for (( i=0; i<indent; i++)); do
+    header+=" "
+done
+header+="$title"
+
 if ! choice=$(gum choose \
-    --header="" \
+    --header="$header" \
     --cursor="> " \
-    --height=5 \
-    --padding="0 2" \
+    --height=2 \
+    --padding="0 0" \
     "Shutdown" \
     "Reboot"); then
     exit 0

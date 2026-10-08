@@ -9,7 +9,7 @@ export GUM_CHOOSE_SELECTED_FOREGROUND=6
 clear
 
 title="Power Menu:"
-indent=10
+indent=8
 
 header=""
 for (( i=0; i<indent; i++)); do

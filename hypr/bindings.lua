@@ -7,7 +7,7 @@ hl.window_rule({
 
     float = true,
     center = true,
-    size = "300 100",
+    size = "300 140",
 })
 
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),

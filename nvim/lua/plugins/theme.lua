@@ -10,6 +10,8 @@ require("rose-pine").setup({
 		transparency = true,
 	},
 })
-vim.cmd([[colorscheme rose-pine]])
+
+vim.cmd([[colorscheme ansi_black]])
+-- vim.cmd([[colorscheme rose-pine]])
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })

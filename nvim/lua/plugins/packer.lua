@@ -22,4 +22,5 @@ vim.pack.add({
     "https://github.com/rcarriga/nvim-dap-ui",
     "https://github.com/leoluz/nvim-dap-go",
     "https://github.com/artempyanykh/marksman",
+    "https://github.com/stevearc/conform.nvim",
 })
